@@ -33,7 +33,7 @@ func main() {
 	log.Println("Proxy port: ", port)
 
 	http.HandleFunc("/", handleRequest)
-	http.ListenAndServe(":"+strconv.Itoa(port), nil)
+	http.ListenAndServe(":"+port, nil)
 }
 
 func handleRequest(w http.ResponseWriter, r *http.Request) {
