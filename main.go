@@ -21,7 +21,7 @@ var (
 func main() {
 	// 从命令行参数获取配置文件路径
 	flag.StringVar(&target, "domain", "https://api.openai.com", "The target domain to proxy.")
-	flag.IntVar(&port, "port", 9000, "The proxy port.")
+	flag.IntVar(&port, "port", os.getenv("PORT", default=9000), "The proxy port.")
 	flag.Parse()
 
 	// 打印配置信息
